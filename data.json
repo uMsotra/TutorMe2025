@@ -1,0 +1,170 @@
+{
+  "tutors": {
+    "tutor1": {
+      "id": "tutor1",
+      "name": "Khethisa Lebakeng",
+      "subjects": ["Mathematics", "Physics"],
+      "education": [
+        "Master's in Materials Engineering - University of Cape Town (UCT)",
+        "BSc in Mechanical Engineering - University of Cape Town (UCT)"
+      ],
+      "experience": "6 Years (High School & University Students)",
+      "currentRole": "Lecturer, Mechanical Engineering - UCT",
+      "languages": ["Sesotho", "English"],
+      "sellingPoints": [
+        "Breaking Down Complex Topics - I simplify difficult concepts into easy-to-understand steps.",
+        "Real-Life Examples - I connect lessons to everyday life, making learning relatable.",
+        "Interactive Learning - I encourage engagement, critical thinking, and problem-solving instead of rote memorisation.",
+        "Experience Across Academic Levels - With 6 years of tutoring experience, I have guided both high school students preparing for exams and university students tackling advanced engineering concepts."
+      ],
+      "contactNumber": "+27 78 567 8863",
+      "profileImage": "/images/tutors/khethisa.jpg",
+      "availability": {
+        "monday": ["16:00-19:00"],
+        "wednesday": ["15:00-18:00"],
+        "saturday": ["09:00-14:00"]
+      },
+      "rating": 4.8,
+      "reviewCount": 42
+    },
+    "tutor2": {
+      "id": "tutor2",
+      "name": "Nkopo Chaole",
+      "subjects": ["Mathematics", "Chemistry"],
+      "education": [
+        "Master's in Materials Engineering - University of Cape Town (UCT)",
+        "BSc(Hons) in Materials Science - University of Cape Town (UCT)",
+        "BSc in Chemical Technology - National University of Lesotho (NUL)"
+      ],
+      "experience": "6 Years (High School & University Students)",
+      "currentRole": "Lab Scientist - UCT",
+      "languages": ["Sesotho", "English"],
+      "sellingPoints": [
+        "Expert STEM Background - Strong academic and research expertise in Math and Chemistry.",
+        "Proven Teaching Experience - Years of tutoring students at high school and university levels.",
+        "Personalized Learning Plans - Lessons tailored to individual student needs.",
+        "Exam-Focused Approach - Step-by-step explanations, problem-solving techniques, and past paper practice."
+      ],
+      "contactNumber": "+27 78 567 8863",
+      "profileImage": "/images/tutors/nkopo.jpg",
+      "availability": {
+        "tuesday": ["16:00-19:00"],
+        "thursday": ["15:00-18:00"],
+        "sunday": ["10:00-14:00"]
+      },
+      "rating": 4.9,
+      "reviewCount": 38
+    }
+  },
+  "courses": {
+    "course1": {
+      "id": "course1",
+      "title": "High School Mathematics - Grade 10-12",
+      "description": "Comprehensive course covering algebra, trigonometry, calculus, and more, aligned with the South African curriculum.",
+      "tutorId": "tutor1",
+      "price": 350,
+      "priceUnit": "per hour",
+      "subjects": ["Mathematics"],
+      "level": "High School",
+      "imageUrl": "/images/courses/math-high-school.jpg"
+    },
+    "course2": {
+      "id": "course2",
+      "title": "University Physics I",
+      "description": "First-year university physics covering mechanics, thermodynamics, and waves.",
+      "tutorId": "tutor1",
+      "price": 450,
+      "priceUnit": "per hour",
+      "subjects": ["Physics"],
+      "level": "University",
+      "imageUrl": "/images/courses/physics-university.jpg"
+    },
+    "course3": {
+      "id": "course3",
+      "title": "Advanced Chemistry - University Level",
+      "description": "Comprehensive course covering organic, inorganic, and physical chemistry for university students.",
+      "tutorId": "tutor2",
+      "price": 450,
+      "priceUnit": "per hour",
+      "subjects": ["Chemistry"],
+      "level": "University",
+      "imageUrl": "/images/courses/chemistry-university.jpg"
+    }
+  },
+  "resources": {
+    "resource1": {
+      "id": "resource1",
+      "title": "Grade 12 Mathematics Past Papers",
+      "description": "Collection of past exam papers with detailed solutions",
+      "subjectId": "Mathematics",
+      "isFree": false,
+      "previewUrl": "/resources/previews/math-g12-papers.pdf",
+      "fullUrl": "/resources/full/math-g12-papers.pdf",
+      "thumbnailUrl": "/images/resources/math-papers.jpg"
+    },
+    "resource2": {
+      "id": "resource2",
+      "title": "Physics Formulas Cheat Sheet",
+      "description": "Comprehensive cheat sheet with all important physics formulas",
+      "subjectId": "Physics",
+      "isFree": true,
+      "previewUrl": "/resources/previews/physics-formulas.pdf",
+      "fullUrl": "/resources/full/physics-formulas.pdf",
+      "thumbnailUrl": "/images/resources/physics-formulas.jpg"
+    }
+  },
+  "subjects": {
+    "mathematics": {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "icon": "calculator",
+      "color": "#4285F4"
+    },
+    "physics": {
+      "id": "physics",
+      "name": "Physics",
+      "icon": "atom",
+      "color": "#EA4335"
+    },
+    "chemistry": {
+      "id": "chemistry",
+      "name": "Chemistry",
+      "icon": "flask",
+      "color": "#34A853"
+    }
+  },
+  "testimonials": [
+    {
+      "id": "testimonial1",
+      "studentName": "Thabo M.",
+      "text": "Khethisa helped me improve my Physics grade from a C to an A in just 3 months. His real-life examples made difficult concepts much easier to understand.",
+      "rating": 5,
+      "tutorId": "tutor1",
+      "date": "2024-03-15"
+    },
+    {
+      "id": "testimonial2",
+      "studentName": "Lesedi K.",
+      "text": "Nkopo's personalized approach to Chemistry helped me pass my first-year university exams with distinction. I highly recommend her to anyone struggling with advanced chemistry concepts.",
+      "rating": 5,
+      "tutorId": "tutor2",
+      "date": "2024-02-20"
+    }
+  ],
+  "settings": {
+    "freeResourcesLimit": 2,
+    "referralDiscountPercentage": 10,
+    "siteInfo": {
+      "name": "TutorMe",
+      "founded": "2019",
+      "slogan": "Expert tutoring for mathematics and science subjects",
+      "contactEmail": "info@tutorme.co.za",
+      "contactPhone": "+27 78 567 8863",
+      "address": "Cape Town, South Africa",
+      "socialLinks": {
+        "facebook": "https://facebook.com/tutorme",
+        "tiktok": "https://tiktok.com/@tutorme"
+      }
+    }
+  }
+}
