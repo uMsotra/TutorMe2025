@@ -7,13 +7,14 @@ import backgroundImage from '../../assets/images/background.jpg';
 const Hero = ({ title, subtitle, ctaText, ctaLink, imageSrc }) => {
   return (
     <div className="relative min-h-screen overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image and Overlay */}
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <img 
           src={backgroundImage} 
           alt="Background" 
-          className="w-full h-full object-cover opacity-30"
+          className="w-full h-full object-cover opacity-20" // Restored opacity-20
         />
+        <div className="absolute inset-0 bg-black/30"></div> // Restored dark overlay
       </div>
       
       {/* Decorative elements */}
@@ -32,12 +33,12 @@ const Hero = ({ title, subtitle, ctaText, ctaLink, imageSrc }) => {
             transition={{ duration: 0.8 }}
             className="md:w-1/2 text-center md:text-left text-white mb-8 md:mb-0"
           >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-white-600">
               {title}
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-teal-100 max-w-xl">
+            {/* <p className="text-xl md:text-2xl mb-8 text-teal-100 max-w-xl">
               {subtitle}
-            </p>
+            </p> */}
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
               <Link
                 to={ctaLink}
