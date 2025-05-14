@@ -43,7 +43,7 @@ const TutorDetailPage = () => {
   // Generate available time slots based on tutor's availability for the selected date
   useEffect(() => {
     if (tutor && tutor.availability) {
-      const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'lowercase' }).format(selectedDate);
+     const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(selectedDate).toLowerCase();
       
       if (tutor.availability[dayOfWeek]) {
         // Parse time slots from tutor's availability
@@ -74,7 +74,7 @@ const TutorDetailPage = () => {
   const tileContent = ({ date }) => {
     if (!tutor || !tutor.availability) return null;
     
-    const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'lowercase' }).format(date);
+ const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(selectedDate).toLowerCase();
     const isAvailable = tutor.availability[dayOfWeek] && tutor.availability[dayOfWeek].length > 0;
     
     return isAvailable ? (

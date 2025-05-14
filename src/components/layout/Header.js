@@ -1,4 +1,4 @@
-// src/components/layout/Header.js
+// src/components/layout/Header.js - Fixed version
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -61,7 +61,7 @@ const Header = () => {
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white shadow-md py-2' 
-          : 'bg-transparent py-4'
+          : 'bg-gradient-to-r from-teal-600/80 to-teal-800/80 backdrop-blur-sm py-4'
       }`}
     >
       <div className="container mx-auto px-4">

@@ -60,35 +60,36 @@ const BookingPage = () => {
     fetchTutorData();
   }, [tutorId]);
   
-  // Generate available time slots based on tutor's availability for the selected date
-  useEffect(() => {
-    if (tutor && tutor.availability && selectedDate) {
-      const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'lowercase' }).format(selectedDate);
+  // Inside the BookingPage component, update this section:
+useEffect(() => {
+  if (tutor && tutor.availability && selectedDate) {
+    // Fix: use "long" instead of "lowercase" and then convert to lowercase
+    const dayOfWeek = new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(selectedDate).toLowerCase();
+    
+    if (tutor.availability[dayOfWeek]) {
+      // Parse time slots from tutor's availability
+      const slots = tutor.availability[dayOfWeek].map(timeRange => {
+        const [startTime, endTime] = timeRange.split('-');
+        return { startTime, endTime };
+      });
       
-      if (tutor.availability[dayOfWeek]) {
-        // Parse time slots from tutor's availability
-        const slots = tutor.availability[dayOfWeek].map(timeRange => {
-          const [startTime, endTime] = timeRange.split('-');
-          return { startTime, endTime };
-        });
+      // Generate hourly slots within the available ranges
+      const hourlySlots = [];
+      slots.forEach(({ startTime, endTime }) => {
+        const start = parseInt(startTime.split(':')[0]);
+        const end = parseInt(endTime.split(':')[0]);
         
-        // Generate hourly slots within the available ranges
-        const hourlySlots = [];
-        slots.forEach(({ startTime, endTime }) => {
-          const start = parseInt(startTime.split(':')[0]);
-          const end = parseInt(endTime.split(':')[0]);
-          
-          for (let hour = start; hour < end; hour++) {
-            hourlySlots.push(`${hour}:00`);
-          }
-        });
-        
-        setAvailableTimeSlots(hourlySlots);
-      } else {
-        setAvailableTimeSlots([]);
-      }
+        for (let hour = start; hour < end; hour++) {
+          hourlySlots.push(`${hour}:00`);
+        }
+      });
+      
+      setAvailableTimeSlots(hourlySlots);
+    } else {
+      setAvailableTimeSlots([]);
     }
-  }, [tutor, selectedDate]);
+  }
+}, [tutor, selectedDate]);
   
   // Validation schema for booking form
   const bookingSchema = Yup.object().shape({
